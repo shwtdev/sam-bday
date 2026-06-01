@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sammy Birthday</title>
+    <style>
+        /* 1. Reset page layout and style desktop background grid */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f75c65; /* Matches your theme color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        /* 2. Create the physical smartphone viewport container */
+        .phone-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 390px;   /* Exact iPhone/Android viewport width */
+            height: 100vh;      /* Fills the height of the screen */
+            box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
+            background: #fff;
+        }
+
+        /* 3. The trick: The iframe behaves exactly like a real phone browser */
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* 4. If someone opens this on a real phone, remove desktop restrictions */
+        @media (max-width: 450px) {
+            .phone-wrapper {
+                max-width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- This container acts like a phone chassis on desktop viewports -->
+    <div class="phone-wrapper">
+        <!-- This embeds your working code and forces mobile mode calculations -->
+        <iframe src="app.html" class="phone-screen"></iframe>
+    </div>
+
+</body>
+</html>
