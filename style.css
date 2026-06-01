@@ -180,10 +180,10 @@ body {
 .title .hat{
     position: absolute;
     right: clamp(20px, 8%, 120px);
-    top: -350px;
+    top: -400px;
     transform: rotate(-40deg);
     z-index: -1;
-    animation: topHat 2s 3.5s forwards ease;
+    animation: topHat 2s 6.5s forwards ease;
     max-width: 150px;
     height: auto;
 }
